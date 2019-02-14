@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="\app" t="IncludeRecursive" />
+    <e p="\b8e86dd" t="IncludeRecursive" />
+    <e p="C:\Users\User\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\User\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_OmegaTestGame.1211147136.00" t="ExcludeRecursive" />
+    <e p="F:\OmegaTestGame" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="BuildAssetBoundle.cs" t="Include" />
+        </e>
+        <e p="Game" t="Include">
+          <e p="AssetBundleManager" t="Include">
+            <e p="AssetBundleManager.cs" t="Include" />
+          </e>
+          <e p="GameScreen" t="Include">
+            <e p="CoinsSpawner.cs" t="Include" />
+            <e p="GameCanvas.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="PlayerModel" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="SkinShader.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Objects" t="Include">
+              <e p="Coin" t="Include">
+                <e p="Coin.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Player" t="Include">
+              <e p="AIPlayer.cs" t="Include" />
+              <e p="AIPlayerMovement.cs" t="Include" />
+            </e>
+            <e p="Timer.cs" t="Include" />
+          </e>
+          <e p="MainScreen" t="Include">
+            <e p="Fader.cs" t="Include" />
+            <e p="MainPanelController.cs" t="Include" />
+          </e>
+          <e p="SceneManager.cs" t="Include" />
+          <e p="Settings.cs" t="Include" />
+          <e p="SoundManager" t="Include">
+            <e p="SoundManager.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="OmegaTestGame.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>

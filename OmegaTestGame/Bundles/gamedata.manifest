@@ -1,0 +1,120 @@
+ManifestFileVersion: 0
+CRC: 1259764785
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 283e6504c2bebfe147359e0da2593d68
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f5a1c94af746d3ac29775de0d33d2972
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5759c560170643144bb514e1d901b28f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 58b86690259497948adeca79de477d03, type: 3}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5925bfe375664cd418fc4998e97a81d1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f244d654e718f444fb1f46f175f97d2d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 62d7e518566bf8244b5add24396f2884, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 93ab371b4d2d07c48a2849f2d781b224, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 98fc794e80a1de345a1444e20a2972bf, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 195
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 319
+  Script: {instanceID: 0}
+Assets:
+- Assets/Game/GameScreen/Models/PlayerModel/Animations/Run.FBX
+- Assets/Game/GameScreen/Models/PlayerModel/Masks/RightHandMask.mask
+- Assets/Game/GameScreen/Models/PlayerModel/Masks/LeftHandMask.mask
+- Assets/Game/GameScreen/Models/PlayerModel/Materials/CKiller-SniperGun.mat
+- Assets/Game/GameScreen/Objects/Coin/CoinIdle.anim
+- Assets/Game/GameScreen/Models/SkyBox/bot.psd
+- Assets/Game/GameScreen/Models/CoinModel/Materials/DefaultMat.mat
+- Assets/Game/GameScreen/Models/PlayerModel/Characters/Soldier/Soldier.prefab
+- Assets/Game/GameScreen/Models/CoinModel/coin.obj
+- Assets/Game/GameScreen/Models/SkyBox/l.psd
+- Assets/Game/GameScreen/Models/PlayerModel/Materials/AutomaticRifle.mat
+- Assets/Game/GameScreen/Models/PlayerModel/Animations/Legacy/Run.FBX
+- Assets/Game/GameScreen/Objects/Textures/grass.jpg
+- Assets/Game/GameScreen/Models/PlayerModel/Materials/Soldier.mat
+- Assets/Game/GameScreen/Models/PlayerModel/Shaders/SkinShader.shader
+- Assets/Game/GameScreen/Objects/Coin/CoinObject.controller
+- Assets/Game/GameScreen/Objects/Game.prefab
+- Assets/Game/GameScreen/Objects/Coin/CoinRotation 1.anim
+- Assets/Game/GameScreen/Models/PlayerModel/Characters/Soldier/Soldier.fbx
+- Assets/Game/GameScreen/Models/PlayerModel/Controllers/FreeHandController.controller
+- Assets/Game/GameScreen/UI/Canvas.prefab
+- Assets/Game/GameScreen/Models/SkyBox/front.psd
+- Assets/Game/GameScreen/Models/PlayerModel/Animations/Soldier 1.controller
+- Assets/Game/GameScreen/Objects/Coin/CoinObject.prefab
+- Assets/Game/GameScreen/Models/SkyBox/r.psd
+- Assets/Game/GameScreen/Models/PlayerModel/Animations/Soldier.controller
+- Assets/Game/GameScreen/Models/SkyBox/up.psd
+- Assets/Game/GameScreen/Models/PlayerModel/YurowmAvatar.FBX
+- Assets/Game/GameScreen/Models/SkyBox/sky,startday.mat
+- Assets/Game/GameScreen/Models/SkyBox/back.psd
+- Assets/Game/GameScreen/Models/PlayerModel/Textures/Soldier.png
+Dependencies: []
