@@ -9,7 +9,7 @@ public class BuildAssetBoundle
         string path = EditorUtility.SaveFolderPanel("Save Bundle", "", "");
         if (path.Length != 0)
         {
-            BuildPipeline.BuildAssetBundles(path, BuildAssetBundleOptions.None, BuildTarget.Android);
+            BuildPipeline.BuildAssetBundles(path, BuildAssetBundleOptions.None, BuildTarget.iOS);
         }
     }
 }
