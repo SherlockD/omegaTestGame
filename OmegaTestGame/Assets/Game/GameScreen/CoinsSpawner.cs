@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class CoinsSpawner : MonoBehaviour
 {
+    [SerializeField] private GameObject Player;
+    
     [SerializeField] private Collider _aria;
     [SerializeField] private GameObject _coinObject;
     [SerializeField] private AIPlayer _aiPlayer;
@@ -28,6 +30,8 @@ public class CoinsSpawner : MonoBehaviour
     
     private void Awake()
     {
+        Instantiate(Player);
+        
         _timer = GetComponent<Timer>();
         
         _minX = _aria.bounds.min.x;

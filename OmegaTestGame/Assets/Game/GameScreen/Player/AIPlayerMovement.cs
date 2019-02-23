@@ -8,8 +8,10 @@ public class AIPlayerMovement : MonoBehaviour
     private Vector3 _nextPosition;
     private Vector3 _startPosition;
 
-    public bool IsPlayerMove => transform.position != _startPosition && (transform.position != _nextPosition );
+    public bool IsPlayerMove => _isPlayerMove;
 
+    private bool _isPlayerMove;
+    
     private void Awake()
     {
         _nextPosition = transform.position;
@@ -35,6 +37,14 @@ public class AIPlayerMovement : MonoBehaviour
         }
 
         _navMeshAgent.destination = position;
-        yield break;
+
+        _isPlayerMove = true;
+        
+        while (transform.position != position)
+        {
+            yield return null;
+        }
+
+        _isPlayerMove = false;
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class MainPanelController : MonoBehaviour
 {
-    [SerializeField] private Fader _loadingFade;
+    [SerializeField] private LoadingScreen _loadingFade;
     
     [Header("Disabled buttons")]
     [SerializeField] private Button[] _buttons;
@@ -13,7 +13,7 @@ public class MainPanelController : MonoBehaviour
     
     private Animator _animator;
 
-    private Fader _fader;
+    private LoadingScreen _fader;
     
     private enum State
     {
@@ -25,7 +25,7 @@ public class MainPanelController : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _fader = GetComponent<Fader>();
+        _fader = GetComponent<LoadingScreen>();
     }
 
     private void ActiveButtons(bool enable)
@@ -50,8 +50,8 @@ public class MainPanelController : MonoBehaviour
                     break;
                 case State.Play:
                     _fader.FadeOut();
-                    ActiveButtons(false);
-                    SceneManager.Instance.LoadScene("GameScene",_loadingFade,_gameMusic);
+                    ActiveButtons(false);                    
+                    SceneManager.Instance.LoadSceneFromBundle("https://s3.amazonaws.com/omegatestgame/PathesSave.json",_loadingFade,_gameMusic);
                     break;
         }
     }

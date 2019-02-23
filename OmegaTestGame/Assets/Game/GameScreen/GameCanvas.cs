@@ -6,7 +6,7 @@ public class GameCanvas : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObject;
     
-    [SerializeField] private Fader _loadScreen;
+    [SerializeField] private LoadingScreen _loadScreen;
     [SerializeField] private GameObject _uiBackGround;
     
     public void MainMenuButtonClick()

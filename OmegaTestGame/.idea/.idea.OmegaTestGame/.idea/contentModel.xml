@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="\532ea166" t="IncludeRecursive" />
     <e p="\app" t="IncludeRecursive" />
-    <e p="\b8e86dd" t="IncludeRecursive" />
     <e p="C:\Users\User\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\User\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_OmegaTestGame.1211147136.00" t="ExcludeRecursive" />
-    <e p="F:\OmegaTestGame" t="IncludeRecursive">
+    <e p="C:\Users\User\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_OmegaTestGame.-1676828599.00" t="ExcludeRecursive" />
+    <e p="F:\OmegaTestGame\OmegaTestGame" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -17,6 +17,7 @@
             <e p="AssetBundleManager.cs" t="Include" />
           </e>
           <e p="GameScreen" t="Include">
+            <e p="CanvasSerializer.cs" t="Include" />
             <e p="CoinsSpawner.cs" t="Include" />
             <e p="GameCanvas.cs" t="Include" />
             <e p="Models" t="Include">
@@ -38,8 +39,17 @@
             <e p="Timer.cs" t="Include" />
           </e>
           <e p="MainScreen" t="Include">
-            <e p="Fader.cs" t="Include" />
+            <e p="ErrorPanel" t="Include">
+              <e p="ErrorPanel.cs" t="Include" />
+            </e>
+            <e p="LoadingScreen.cs" t="Include" />
             <e p="MainPanelController.cs" t="Include" />
+          </e>
+          <e p="Save" t="Include">
+            <e p="AnchorsSave.cs" t="Include" />
+            <e p="AssetBundleSave.cs" t="Include" />
+            <e p="JsonSerializator.cs" t="Include" />
+            <e p="PathesSave.cs" t="Include" />
           </e>
           <e p="SceneManager.cs" t="Include" />
           <e p="Settings.cs" t="Include" />
