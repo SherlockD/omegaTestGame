@@ -12,11 +12,16 @@ public class MainPanelController : MonoBehaviour
     [SerializeField] private AudioClip _gameMusic;
     
     private Animator _animator;
-
+    private RectTransform _rectTransform;
     private LoadingScreen _fader;
+
+    private State _state ;
+
+    private Vector3 startPosition;
     
     private enum State
     {
+        Idle,
         SettingsOpened,
         SettingsClosed,
         Play
@@ -24,8 +29,24 @@ public class MainPanelController : MonoBehaviour
     
     private void Awake()
     {
+        startPosition = transform.position;
         _animator = GetComponent<Animator>();
         _fader = GetComponent<LoadingScreen>();
+        _rectTransform = GetComponent<RectTransform>();
+    }
+
+    private void Update()
+    {
+        switch (_state)
+        {
+            case State.SettingsOpened:
+                _rectTransform.anchoredPosition = Vector2.Lerp(_rectTransform.anchoredPosition,new Vector2(-Screen.width,0), 5*Time.deltaTime);
+                break;
+            case State.SettingsClosed:
+                _rectTransform.anchoredPosition = Vector2.Lerp(_rectTransform.anchoredPosition,Vector2.zero, 5*Time.deltaTime);
+                break;
+                     
+        }
     }
 
     private void ActiveButtons(bool enable)
@@ -38,14 +59,13 @@ public class MainPanelController : MonoBehaviour
     
     private void SetState(State state)
     {
+        _state = state;
         switch (state)
         {
                 case State.SettingsOpened:
                     ActiveButtons(false);
-                    _animator.SetBool("SlideTheMenu",true);
                     break;
                 case State.SettingsClosed:
-                    _animator.SetBool("SlideTheMenu",false);
                     ActiveButtons(true);
                     break;
                 case State.Play:

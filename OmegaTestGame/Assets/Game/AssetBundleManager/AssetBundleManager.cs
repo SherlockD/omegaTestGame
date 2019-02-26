@@ -58,7 +58,7 @@ public class AssetBundleManager : MonoBehaviour
 
         if (request.isNetworkError || request.isHttpError)
         {
-            AssetBundleSave manifestData = null;
+            AssetBundleSave manifestData;
             if (File.Exists(_dataPath + "/" +AssetBundleSave.fileName))
             {
                 _downloadedAssets.Add(pathesSaveUrl);

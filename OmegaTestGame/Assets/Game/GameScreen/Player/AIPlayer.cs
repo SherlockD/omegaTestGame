@@ -1,10 +1,11 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class AIPlayer : MonoBehaviour
-{
+{    
     public event Action CallOnCollideWithCoin;
     
     [SerializeField] private GameObject _coinObject;

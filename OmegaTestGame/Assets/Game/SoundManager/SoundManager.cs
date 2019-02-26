@@ -50,9 +50,7 @@ public class SoundManager : MonoBehaviour
     {
         Instance.PlaySoundInternal(Instance._buttonClickSound);
     }
-    
-    #region PRIVATE MEMBERS
-    
+        
     private void PlaySoundInternal(AudioClip clip)
     {
         _soundSource.PlayOneShot(clip);
@@ -70,8 +68,5 @@ public class SoundManager : MonoBehaviour
             _musicSource.clip = _standardMusic;
             _musicSource.Play();
         }
-    }
-    
-    #endregion
-    
+    }        
 }

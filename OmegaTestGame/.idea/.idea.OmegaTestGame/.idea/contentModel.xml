@@ -20,13 +20,6 @@
             <e p="CanvasSerializer.cs" t="Include" />
             <e p="CoinsSpawner.cs" t="Include" />
             <e p="GameCanvas.cs" t="Include" />
-            <e p="Models" t="Include">
-              <e p="PlayerModel" t="Include">
-                <e p="Shaders" t="Include">
-                  <e p="SkinShader.shader" t="Include" />
-                </e>
-              </e>
-            </e>
             <e p="Objects" t="Include">
               <e p="Coin" t="Include">
                 <e p="Coin.cs" t="Include" />
@@ -57,6 +50,7 @@
             <e p="SoundManager.cs" t="Include" />
           </e>
         </e>
+        <e p="OverCameraScaler.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
