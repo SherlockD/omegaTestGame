@@ -17,6 +17,7 @@ public class AssetBundleManager : MonoBehaviour
     
     private void Awake()
     {
+        Debug.Log(Application.persistentDataPath);
 #if UNITY_EDITOR
      _dataPath = Application.dataPath;
 #else
@@ -32,12 +33,14 @@ public class AssetBundleManager : MonoBehaviour
         }      
     }
 
-    public void LoadBundle(string pathesSaveUrl,Action<AssetBundle> response,LoadingScreen loadingScreen)
+    public void LoadBundle(string pathesSaveUrl,Action<AssetBundle> response,Fader fader)
     {
-        StartCoroutine(LoadBundleFromServer(pathesSaveUrl,response,loadingScreen));
+        StartCoroutine(LoadBundleFromServer(pathesSaveUrl,response,fader));
     }
+
+
     
-    IEnumerator LoadBundleFromServer(string pathesSaveUrl,Action<AssetBundle> response, LoadingScreen loadingScreen)
+    IEnumerator LoadBundleFromServer(string pathesSaveUrl,Action<AssetBundle> response, Fader fader)
     {
         Hash128 hash;
         
@@ -48,7 +51,7 @@ public class AssetBundleManager : MonoBehaviour
 
         if (_downloadedAssets.Contains(pathesSaveUrl))
         {
-            loadingScreen.StatusText.text = "Data already download, load from cache";
+            fader.StatusText.text = "Data already download, load from cache";
             yield break;
         }
                        
@@ -66,7 +69,7 @@ public class AssetBundleManager : MonoBehaviour
                 manifestData = JsonSerializator.ReadSerialize<AssetBundleSave>(AssetBundleSave.fileName,
                     _dataPath);
             
-                loadingScreen.StatusText.text = "Internet connection failed, load last downloaded data";
+                fader.StatusText.text = "Internet connection failed, load last downloaded data";
            
                 hash = Hash128.Parse(manifestData?.AssetBundleHash);
                 
@@ -81,15 +84,15 @@ public class AssetBundleManager : MonoBehaviour
             else
             {
                 Debug.Log("Error. Check internet connection!");    
-                var errorPanel = Instantiate(_errorPanel, loadingScreen.transform);
-                errorPanel.CreatePanel(delegate { SceneManager.Instance.StopSceneLoad(); SceneManager.Instance.LoadScene("MainMenu",loadingScreen,null);},"Error. First run requires internet connection", "Main menu" );
+                var errorPanel = Instantiate(_errorPanel, fader.transform);
+                errorPanel.CreatePanel(delegate { SceneManager.Instance.StopSceneLoad(); SceneManager.Instance.LoadScene("MainMenu",fader);},"Error. First run requires internet connection", "Main menu" );
                 yield break;
             }
         }
         
         _downloadedAssets.Add(pathesSaveUrl);
         
-        loadingScreen.StatusText.text = "Loading data from server...";               
+        fader.StatusText.text = "Loading data from server...";               
         
         JsonSerializator.SerializeClass(request.downloadHandler.text,"pathesSave.json",Application.persistentDataPath);
 
@@ -100,7 +103,6 @@ public class AssetBundleManager : MonoBehaviour
         yield return request.SendWebRequest();
         
         JsonSerializator.SerializeClass(request.downloadHandler.text,"anchorsSave.json",Application.persistentDataPath);
-        Debug.Log(Application.persistentDataPath);
 
         request = UnityWebRequest.Get(pathesSave.AssetBundleUrl + ".manifest");
         
@@ -108,7 +110,7 @@ public class AssetBundleManager : MonoBehaviour
 
         var hashRow = request.downloadHandler.text.Split("\n".ToCharArray())[5];
             
-            hash = Hash128.Parse(hashRow.Split(':')[1].Trim());
+        hash = Hash128.Parse(hashRow.Split(':')[1].Trim());
 
 
         if (hash.isValid)

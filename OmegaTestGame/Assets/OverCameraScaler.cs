@@ -7,11 +7,6 @@ public class OverCameraScaler : MonoBehaviour
 {
     [SerializeField] private RectTransform _overCameraObject;
 
-    private enum Position
-    {
-        RightSide
-    }
-
     private void Awake()
     {
         //_overCameraObject.offsetMin = new Vector2(715,0);

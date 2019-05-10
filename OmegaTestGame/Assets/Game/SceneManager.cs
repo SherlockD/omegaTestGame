@@ -8,9 +8,6 @@ public class SceneManager : MonoBehaviour
     
     public static SceneManager Instance;
 
-    public event Action BeginLoadScene;
-    public event Action EndLoadScene;
-
     private AsyncOperation _loadSceneAsync;
 
     private event Action<AssetBundle> responce;
@@ -19,7 +16,7 @@ public class SceneManager : MonoBehaviour
     
     private void Awake()
     {
-        responce += unpackScene;
+        responce += UnpackScene;
         if(Instance == null)
         {
             Instance = this;
@@ -30,19 +27,18 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    public void LoadScene(string sceneName, LoadingScreen fader,AudioClip nextMusic)
+    public void LoadScene(string sceneName, Fader fader)
     {
         fader.CallOnEndFade += () =>
         {
-            _loadSceneAsync.allowSceneActivation = true;
-            SoundManager.PlayMusic(nextMusic);            
+            _loadSceneAsync.allowSceneActivation = true;          
         };
-        StartCoroutine(LoadSceneAsync(sceneName,fader,nextMusic));
+        StartCoroutine(LoadSceneAsync(sceneName,fader));
     }
 
-    public void LoadSceneFromBundle(string pathesSaveUrl, LoadingScreen fader,AudioClip nextMusic)
+    public void LoadSceneFromBundle(string pathesSaveUrl, Fader fader)
     {
-        StartCoroutine(LoadSceneFromBundleAsync(pathesSaveUrl,responce,fader,nextMusic));
+        StartCoroutine(LoadSceneFromBundleAsync(pathesSaveUrl,responce,fader));
     }
 
     public void StopSceneLoad()
@@ -50,7 +46,7 @@ public class SceneManager : MonoBehaviour
         StopAllCoroutines();
     }
     
-    private void unpackScene(AssetBundle bundle)
+    private void UnpackScene(AssetBundle bundle)
     {        
         if (bundle.isStreamedSceneAssetBundle)
         {
@@ -59,7 +55,7 @@ public class SceneManager : MonoBehaviour
         }
     }
     
-    private IEnumerator LoadSceneFromBundleAsync(string pathesSaveUrl,Action<AssetBundle> responce,LoadingScreen fader,AudioClip nextMusic)
+    private IEnumerator LoadSceneFromBundleAsync(string pathesSaveUrl,Action<AssetBundle> responce,Fader fader)
     {      
         AssetBundleManager.Instance.LoadBundle(pathesSaveUrl,responce,fader);
 
@@ -68,16 +64,14 @@ public class SceneManager : MonoBehaviour
             yield return null;
         }
         
-        LoadScene(_unpackedScene,fader,nextMusic);
+        LoadScene(_unpackedScene,fader);
     }
     
-    private IEnumerator LoadSceneAsync(string sceneName,LoadingScreen fader,AudioClip nextMusic)
-    {
-        yield return new WaitForSeconds(2);
-        
+    private IEnumerator LoadSceneAsync(string sceneName,Fader fader)
+    {        
         _loadSceneAsync = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
         _loadSceneAsync.allowSceneActivation = false;
-        BeginLoadScene?.Invoke();
+
         while (!_loadSceneAsync.isDone)
         {
             if (_loadSceneAsync.progress >= 0.9f)
@@ -86,7 +80,6 @@ public class SceneManager : MonoBehaviour
             }
             yield return null;
         }        
-        EndLoadScene?.Invoke();
         yield return null;
         
     }

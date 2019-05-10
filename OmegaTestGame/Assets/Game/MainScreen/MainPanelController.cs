@@ -3,17 +3,17 @@ using UnityEngine.UI;
 
 public class MainPanelController : MonoBehaviour
 {
-    [SerializeField] private LoadingScreen _loadingFade;
+    [SerializeField] private Fader _loadingFade;
     
     [Header("Disabled buttons")]
     [SerializeField] private Button[] _buttons;
 
     [Header("Music")] 
-    [SerializeField] private AudioClip _gameMusic;
+    [SerializeField] private AudioClip _menuMusic;
     
     private Animator _animator;
     private RectTransform _rectTransform;
-    private LoadingScreen _fader;
+    private Fader _fader;
 
     private State _state ;
 
@@ -31,8 +31,13 @@ public class MainPanelController : MonoBehaviour
     {
         startPosition = transform.position;
         _animator = GetComponent<Animator>();
-        _fader = GetComponent<LoadingScreen>();
+        _fader = GetComponent<Fader>();
         _rectTransform = GetComponent<RectTransform>();
+    }
+
+    private void Start()
+    {
+        SoundManager.PlayMusic(_menuMusic);
     }
 
     private void Update()
@@ -71,7 +76,7 @@ public class MainPanelController : MonoBehaviour
                 case State.Play:
                     _fader.FadeOut();
                     ActiveButtons(false);                    
-                    SceneManager.Instance.LoadSceneFromBundle("https://s3.amazonaws.com/omegatestgame/PathesSave.json",_loadingFade,_gameMusic);
+                    SceneManager.Instance.LoadSceneFromBundle("https://s3.amazonaws.com/omegatestgame/PathesSave.json",_loadingFade);
                     break;
         }
     }

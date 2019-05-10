@@ -16,11 +16,13 @@ public class SoundManager : MonoBehaviour
     
     public bool SfxEnable
     {
+        get { return !Instance._soundSource.mute; }
         set { Instance._soundSource.mute = !value; }
     }
 
     public bool MusicEnable
     {
+        get { return !Instance._musicSource.mute; }
         set { Instance._musicSource.mute = !value; }
     }
 
@@ -61,11 +63,6 @@ public class SoundManager : MonoBehaviour
         if (clip != null)
         {
             _musicSource.clip = clip;
-            _musicSource.Play();
-        }
-        else
-        {
-            _musicSource.clip = _standardMusic;
             _musicSource.Play();
         }
     }        
