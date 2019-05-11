@@ -20,21 +20,10 @@
             <e p="CanvasSerializer.cs" t="Include" />
             <e p="CoinsSpawner.cs" t="Include" />
             <e p="GameCanvas.cs" t="Include" />
-            <e p="Objects" t="Include">
-              <e p="Coin" t="Include">
-                <e p="Coin.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Player" t="Include">
-              <e p="AIPlayer.cs" t="Include" />
-              <e p="AIPlayerMovement.cs" t="Include" />
-            </e>
             <e p="Timer.cs" t="Include" />
           </e>
           <e p="MainScreen" t="Include">
-            <e p="ErrorPanel" t="Include">
-              <e p="ErrorPanel.cs" t="Include" />
-            </e>
+            <e p="Fader.cs" t="Include" />
             <e p="LoadingScreen.cs" t="Include" />
             <e p="MainPanelController.cs" t="Include" />
           </e>
@@ -51,6 +40,18 @@
           </e>
         </e>
         <e p="OverCameraScaler.cs" t="Include" />
+        <e p="Prefabs" t="Include">
+          <e p="Coin" t="Include">
+            <e p="Coin.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="ErrorPanel.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="AIPlayer.cs" t="Include" />
+            <e p="AIPlayerMovement.cs" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
